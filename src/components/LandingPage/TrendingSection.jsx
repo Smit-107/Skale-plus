@@ -103,13 +103,13 @@ const TrendingSection = () => {
     <ThemeProvider theme={customTheme}>
 
     <div className="pt-[35px]">
-      <p className="px-[15px] text-[#000] font-Poppins sm:font-musticaPro text-[25px] sm:text-[45px] not-italic font-bold sm:font-semibold leading-[130%] tracking-[-0.5px] sm:tracking-[-0.9px] text-center">
+      <p className="px-[15px] text-[#000]  text-[25px] sm:text-[45px] not-italic font-bold sm:font-semibold leading-[130%] tracking-[-0.5px] sm:tracking-[-0.9px] text-center">
         Trending on Skaleplus
       </p>
 
       {/* <Link href="/blogs"> */}
       <div className="hidden cursor-pointer sm:flex items-center justify-end mr-[50px] lg:mr-[200px] gap-1">
-        <p className="text-[#ffa500] font-Bahnschrift text-[13px] not-italic font-light tracking-[-0.26px]">
+        <p className="text-[#ffa500]  text-[13px] not-italic font-light tracking-[-0.26px]">
           See More
         </p>
         <ChevronRightIcon className="text-[#ffa500]" fontSize="medium" />
@@ -131,8 +131,6 @@ const TrendingSection = () => {
               lg={4}
 
               className="cursor-pointer sm:!mt-8 !pt-0 hover:transform hover:scale-105  transition-transform duration-500"
-              
-              
             >
                 
               <Grid container spacing={0} className="" >
@@ -150,9 +148,8 @@ const TrendingSection = () => {
                       alt="profile"
                       className="h-[25px] w-[25px]"
                     />
-                    <p className="text-[#000] font-Bahnschrift text-[14px] not-italic font-light">
+                    <p className="text-[#000]  text-[14px] not-italic font-light">
                       {(itm?.firstName ?? '') 
-                    //   + ' ' + (itm?.author?.lastName ?? '')
                       }
                     </p>
                   </div>
@@ -161,11 +158,11 @@ const TrendingSection = () => {
               <Grid container spacing={0}>
                 <Grid item xs={2}></Grid>
                 <Grid item xs={10}>
-                  <p className="text-[#000] font-musticaPro text-[15px] not-italic text-start font-semibold leading-normal">
+                  <p className="text-[#000]  text-[15px] not-italic text-start font-semibold leading-normal">
                     {itm?.title}
                   </p>
                   <div className="mt-3 flex items-center gap-3">
-                    <p className="text-[#000] font-Bahnschrift text-[14px] overflow-ellipsis overflow-hidden line-clamp-1 not-italic font-semibold leading-normal">
+                    <p className="text-[#000]  text-[14px] overflow-ellipsis overflow-hidden line-clamp-1 not-italic font-semibold leading-normal">
                       {/* {formatDate(itm?.createdAt)} */}
                       {itm?.tags}
                     </p>
@@ -176,7 +173,7 @@ const TrendingSection = () => {
                         .map((hashtag, hashtagIndex) => (
                           <div
                             key={hashtagIndex}
-                            className="bg-[#F2F4F6] px-[20px] py-[2px] rounded-lg text-[#555] font-Bahnschrift text-[11px] not-italic font-light leading-normal"
+                            className="bg-[#F2F4F6] px-[20px] py-[2px] rounded-lg text-[#555]  text-[11px] not-italic font-light leading-normal"
                           >
                             {hashtag}
                           </div>

@@ -8,22 +8,22 @@ const PlaneCard = ({ plans, price }) => {
       className={` sm:w-full border border-[#000] rounded-3xl  p-10  flex flex-col gap-4 lg:hover:transform lg:hover:scale-105 lg:transition-transform lg:duration-500 cursor-pointer bg-[#fff]`}
     >
       <div className="flex justify-center flex-col">
-        <span className="text-[25px] sm:text-[28px] lg:text-[30px] xl:text-[34px] font-bold font-Montserrat text-center text-[#000]">
+        <span className="text-[25px] sm:text-[28px] lg:text-[30px] xl:text-[34px] font-bold  text-center text-[#000]">
           {plans}
         </span>
-        <span className="text-[12px] sm:text-[14px] lg:text-[16px]  font-normal font-Montserrat text-center text-[#000008]">
+        <span className="text-[12px] sm:text-[14px] lg:text-[16px]  font-normal  text-center text-[#000008]">
           Nemo enim ipsam voluptatem
         </span>
       </div>
       <div className="flex justify-center flex-col">
-        <span className="text-[25px] sm:text-[28px] lg:text-[30px] xl:text-[48px] font-bold font-Montserrat text-center text-[#000]">
+        <span className="text-[25px] sm:text-[28px] lg:text-[30px] xl:text-[48px] font-bold  text-center text-[#000]">
           ${price}
           <span className="text-[12px] sm:text-[14px] lg:text-[16px] xl:text-[18px] font-normal text-[#00000088]">
             /mo
           </span>
         </span>
         <div className="flex flex-col gap-4">
-          <span className="text-[10px] sm:text-[12px] font-normal font-Montserrat text-center flex items-center justify-center gap-3 text-[#00000088]">
+          <span className="text-[10px] sm:text-[12px] font-normal text-center flex items-center justify-center gap-3 text-[#00000088]">
             yearly <span className="bg-[#D9D9D9] rounded-xl px-3">15%off</span>
           </span>
           <button className="rounded-xl text-[13px] sm:text-[15px] lg:text-[16px] xl:text-[18px] text-[#fff] bg-[#FFA500] font-light p-3 md:p-3 mx-6">

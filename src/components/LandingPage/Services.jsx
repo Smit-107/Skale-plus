@@ -105,7 +105,7 @@ const Services = () => {
 
   const CustomLeftButton = () => {
     return (
-      <div className="absolute hidden top-[45%] lg:flex left-10">
+      <div className="absolute top-[45%] hidden lg:flex  left-10">
         <button onClick={prevSlide}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -153,13 +153,13 @@ const Services = () => {
         <CustomLeftButton />
         <Carousel
           ref={carouselRef}
-          responsive={responsive}
           customTransition="all .5s ease-in-out"
-          itemClass="pt-12 pb-12 flex justify-center px-20"
+          itemClass="pt-12 px-20 pb-12 flex justify-center"
           showDots
           arrows={false}
           autoPlay={true}
           infinite
+          responsive={responsive}
           keyBoardControl={true}
           removeArrowOnDeviceType={["mobile"]}
           transitionDuration={500}
@@ -171,21 +171,21 @@ const Services = () => {
           {servicesData.map((item, index) => (
             <div
               key={index}
-              className="bg-[#fff] w-[280px] sm:w-[310px] h-[410px] flex-shrink-0 cursor-pointer hover:transform hover:scale-105 transition-transform duration-500 px-10 pt-10 pb-20"
+              className="bg-[#fff] px-10 pt-10 pb-20 w-[280px] sm:w-[310px] h-[410px] flex-shrink-0 cursor-pointer hover:transform hover:scale-105 transition-transform duration-500 "
               style={{
                 boxShadow: "0px 0px 24px 0px rgba(0, 0, 0, 0.10)",
               }}
             >
               <div className="flex justify-center items-center">
-                <div className="bg-[#F5921D] flex justify-center items-center rounded-xl px-11 py-12">
-                  <img src={item.img} alt="Card1 Icon" width={56} height={56} />
+                <div className="bg-[#F5921D] px-11 py-12 flex justify-center items-center rounded-xl ">
+                  <img src={item.img} alt="Card1" width={56} height={56} />
                 </div>
               </div>
-              <div className="bg-[#BCBCBC] h-[1px] mx-[34px] my-[30px]" />
-              <p className="text-[#000] text-center font-musticaPro text-[18px] sm:text-[20px] not-italic font-semibold leading-normal whitespace-nowrap">
+              <div className="mx-[34px] my-[30px] bg-[#BCBCBC] h-[1px] " />
+              <p className="text-[#000] text-center  text-[18px] sm:text-[20px] not-italic font-semibold leading-normal whitespace-nowrap">
                 {item.title}
               </p>
-              <p className="text-[#000] text-center font-Bahnschrift text-[14px] not-italic font-light leading-normal mt-[30px] line-clamp-4">
+              <p className="text-[#000] text-center text-[14px] not-italic font-light leading-normal mt-[30px] line-clamp-4">
                 {item.desc}
               </p>
             </div>

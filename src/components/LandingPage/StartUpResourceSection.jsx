@@ -77,7 +77,7 @@ const StartUpResourceSection = () => {
         Business & Startup Resources
       </p>
       <div className="hidden cursor-pointer sm:flex items-center justify-end mr-[50px] lg:mr-[200px] gap-1">
-        <span className="text-[#ffa500] font-Bahnschrift text-[13px] not-italic font-light tracking-[-0.26px]">
+        <span className="text-[#ffa500] text-[13px] not-italic font-light tracking-[-0.26px]">
           See More
         </span>
         <ChevronRightIcon className="!text-[#ffa500]" fontSize="medium" />
@@ -115,7 +115,7 @@ const StartUpResourceSection = () => {
 
 export default StartUpResourceSection;
 
-const ResourceCard = ({ itm, isSignedIn }) => {
+const ResourceCard = ({ itm }) => {
   return (
     <div
       className="p-4 bg-white flex w-full  sm:w-[466px] max-w-full cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
@@ -131,7 +131,7 @@ const ResourceCard = ({ itm, isSignedIn }) => {
 
       <div className="lg:ps-3 ps-5">
         <p
-          className={`text-[#000] font-Poppins sm:font-musticaPro text-[14px] sm:text-[15px] not-italic font-bold sm:font-semibold leading-[130%] tracking-[-0.22px] sm:tracking-[-0.3px] overflow-ellipsis overflow-hidden line-clamp-2 text-start`}
+          className={`text-[#000]  text-[14px] sm:text-[15px] not-italic font-bold sm:font-semibold leading-[130%] tracking-[-0.22px] sm:tracking-[-0.3px] overflow-ellipsis overflow-hidden line-clamp-2 text-start`}
         >
           {itm?.title}
         </p>
@@ -152,7 +152,7 @@ const ResourceCard = ({ itm, isSignedIn }) => {
             {itm?.languages.map((item, index) => (
               <button
                 key={index}
-                className="font-semibold p-1.5 px-2.5 rounded-full text-[12px] lg:text-[13px] bg-[#00000031] text-[#000]"
+                className="font-semibold text-[12px] lg:text-[13px] p-1.5 px-2.5  bg-[#00000031] text-[#000] rounded-full "
               >
                 {item}
               </button>

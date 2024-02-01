@@ -51,8 +51,8 @@ const Pricing = () => {
     <React.Fragment>
       <div className="container pb-10 sm:pb-12">
         <div className="mx-6 sm:mx-10 flex flex-col gap-20">
-          <div className="flex flex-col font-Poppins text-[48px] font-bold text-[#000] text-center gap-4 lg:gap-6">
-            <span className="text-[26px] md:text-[30px] lg:text-[48px] font-bold p-4 sm:p-0">
+          <div className="flex flex-col gap-4 lg:gap-6 text-[48px] font-bold  text-center  text-[#000]">
+            <span className=" p-4 sm:p-0 text-[26px] md:text-[30px] lg:text-[48px] font-bold">
               Plans and Pricing
             </span>
             <span className="text-[18px] sm:text-[20px] font-normal p-2 md:px-20 text-[#00000088]">
@@ -66,9 +66,9 @@ const Pricing = () => {
               <button
                 className={`${
                   personalUse
-                    ? "bg-[#000] border border-[#000] text-[#fff]"
+                    ? " border border-[#000] bg-[#000] text-[#fff]"
                     : "bg-[#E4E5E6] border border-[#E4E5E6] text-[#000] shadow-md"
-                } rounded-md text-[14px] text-center  leading-normal tracking-[-0.225px] font-medium font-Montserrat px-6 py-2 sm:px-14 sm:py-3 whitespace-nowrap`}
+                } rounded-md text-[14px] text-center  leading-normal tracking-[-0.225px] font-medium px-6 py-2 sm:px-14 sm:py-3 whitespace-nowrap`}
                 onClick={() => setPersonalUse(true)}
               >
                 Personal Use
@@ -78,7 +78,7 @@ const Pricing = () => {
                   !personalUse
                     ? "bg-[#000] border border-[#000] text-[#fff]"
                     : "bg-[#E4E5E6] border border-[#E4E5E6] text-[#000] shadow-md"
-                }  rounded-md text-[14px] text-center leading-normal tracking-[-0.225px] font-medium font-Montserrat px-6 py-2 sm:px-14 sm:py-3 whitespace-nowrap`}
+                }  rounded-md text-[14px] text-center leading-normal tracking-[-0.225px] font-medium px-6 py-2 sm:px-14 sm:py-3 whitespace-nowrap`}
                 onClick={() => setPersonalUse(false)}
               >
                 Business Use

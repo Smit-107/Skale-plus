@@ -3,9 +3,9 @@ import eventImages from '../../images/What-is-Event-Design 2event image.png'
 const EventsCard = () => {
   const [like, setLike] = useState(false);
   return (
-    <div className="bg-[#fff] rounded-3xl w-full lg:w-full h-full  shadow-md relative transform hover:scale-105 transition-transform duration-500 cursor-pointer">
-      <div className="absolute right-3 top-3 flex gap-2 ">
-        <button className="rounded-full bg-[#fff] p-[10px] flex justify-center items-center">
+    <div className="bg-[#fff]  transform hover:scale-105 relative transition-transform duration-500 rounded-3xl w-full lg:w-full h-full  shadow-md  cursor-pointer">
+      <div className="top-3 flex gap-2 absolute right-3 ">
+        <button className="rounded-full bg-[#fff] flex justify-center items-center p-[10px]">
           <svg
             width="23"
             height="21"
@@ -24,7 +24,7 @@ const EventsCard = () => {
           </svg>
         </button>
         <button
-          className="rounded-full bg-[#fff] p-[10px] flex justify-center items-center"
+          className="rounded-full flex justify-center items-center bg-[#fff] p-[10px]"
           onClick={() => setLike(!like)}
         >
           {!like ? (
@@ -61,22 +61,22 @@ const EventsCard = () => {
       <img
         src={eventImages}
         alt="event"
-        className="w-full h-[250px] rounded-xl object-cover"
+        className="w-full h-[250px] object-cover rounded-xl"
       />
       <div className="flex justify-between gap-6 p-[12.5px] lg:p-[25px] mb-[10px]">
         <div className="flex flex-col gap-1 lg:gap-3">
-          <span className="font-Poppins lg:font-Bahnschrift text-[12px] lg:text-[16px] font-light text-[#FFA500]">
+          <span className=" text-[12px] text-[#FFA500] lg:text-[16px] font-light ">
             Sep
           </span>
-          <span className="font-Poppins lg:font-musticaPro text-[15px] lg:text-[20px] font-bold text-[#000]">
+          <span className=" text-[15px] text-[#000] lg:text-[20px] font-bold ">
             18
           </span>
         </div>
         <div className="flex flex-col gap-1 lg:gap-3 text-[#000]">
-          <span className="font-Poppins lg:font-musticaPro text-[16px] lg:text-[18px] font-bold text-start line-clamp-2 lg:line-clamp-1">
+          <span className=" lg:text-[18px] text-[16px]  line-clamp-2 font-bold text-start lg:line-clamp-1">
             UI UX Designer Event
           </span>
-          <span className="font-Montserrat lg:font-Bahnschrift text-[12px] lg:text-[14px] font-light text-start line-clamp-2 lg:line-clamp-3">
+          <span className="lg:text-[14px] text-[12px] line-clamp-2  font-light text-start  lg:line-clamp-3">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore.
           </span>
