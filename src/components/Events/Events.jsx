@@ -53,7 +53,7 @@ const Events = () => {
     <React.Fragment>
       <div className="container pb-10 sm:pb-12">
         <div className="mx-4 sm:mx-10 flex flex-col sm:gap-12 gap-6">
-          <div className="flex flex-col font-Poppins text-[48px] font-bold text-[#000] text-center  p-0 lg:gap-2.5">
+          <div className="flex flex-col  text-[48px] font-bold text-[#000] text-center  p-0 lg:gap-2.5">
             <span className="text-[26px] md:text-[30px] lg:text-[48px] font-bold p-4 lg:p-0">
               Startup Events
             </span>
@@ -64,23 +64,12 @@ const Events = () => {
             </span>
           </div>
           <div className="flex flex-col gap-5 md:gap-8">
-            {/* <div className="flex  flex-row items-start md:items-center gap-1 md:gap-3">
-              <span className="font-Poppins text-[18px] lg:text-[28px] font-bold text-[#000]">
-                Popular in
-              </span>
-              <button>
-                <span className="font-Poppins text-[18px] lg:text-[28px] font-bold text-[#FFA500] flex items-center justify-center gap-1.5">
-                  <ArrowForwardIosIcon className="!text-[#FFA500] text-[15px] lg:!text-[23px] !rotate-90" />
-                  Punjab
-                </span>
-              </button>
-            </div> */}
             <div className="flex flex-row items-start md:items-center gap-1 md:gap-3">
-              <span className="font-Poppins text-[18px] lg:text-[28px] font-bold text-[#000]">
+              <span className=" text-[18px] lg:text-[28px] font-bold text-[#000]">
                 Popular in
               </span>
               <button onClick={handleOpenMenu}>
-                <span className="font-Poppins text-[18px] lg:text-[28px] font-bold text-[#FFA500] flex items-center justify-center gap-1.5">
+                <span className=" text-[18px] lg:text-[28px] font-bold text-[#FFA500] flex items-center justify-center gap-1.5">
                   <ArrowForwardIosIcon className="!text-[#FFA500] text-[15px] lg:!text-[23px] !rotate-90" />
                   {selectedLocation === "Custom Location" ? (
                     <input
@@ -110,7 +99,6 @@ const Events = () => {
                 >
                   Browse online events
                 </MenuItem>
-                {/* Add more menu items as needed */}
               </Menu>
             </div>
             <div className="flex flex-col gap-12">
@@ -125,10 +113,10 @@ const Events = () => {
                     label={item?.tabName}
                     {...a11yProps(index)}
                     className="whitespace-nowrap"
-                    // onClick={() => setMenCategoryId([item?.id])}
                   />
                 ))}
               </CustomTab>
+
               <TabPanel value={value} index={value}>
                 <div className="w-full ">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-20">
@@ -138,8 +126,9 @@ const Events = () => {
                   </div>
                 </div>
               </TabPanel>
+              
               <div className="flex justify-center">
-                <button className="rounded-[18px] lg:rounded-2xl bg-[#FFA500] px-[30px] py-[12px] text-[#fff] font-Montserrat font-medium not-italic leading-normal text-[12px] md:text-[20px]">
+                <button className="rounded-[18px] lg:rounded-2xl bg-[#FFA500] px-[30px] py-[12px] text-[#fff]  font-medium not-italic leading-normal text-[12px] md:text-[20px]">
                   see more
                 </button>
               </div>
