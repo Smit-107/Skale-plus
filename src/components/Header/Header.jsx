@@ -24,6 +24,10 @@ const navLinks = [
     name: "Events",
     link: "/events",
   },
+  {
+    name: "Search",
+    link: "/search",
+  },
 ];
 
 const Header = () => {
