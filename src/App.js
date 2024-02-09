@@ -7,7 +7,7 @@ import Home from "./components/Home/Home";
 import Pricing from "./components/Pricing/Pricing";
 import Blogs from "./components/Blogs/Blogs";
 import Events from "./components/Events/Events";
-import SerchPage from "./components/Search/SerchPage";
+import MainPage from "./components/Search/MainPage";
 
 function App() {
   return (
@@ -17,10 +17,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs" element={<Blogs />} /> 
         <Route path="/events" element={<Events />} />
-        <Route path="/search" element={<SerchPage />} />
-      </Routes>
+        <Route path="/search" element={<MainPage />} />
+      </Routes>{" "}
       <Footer />
     </div>
   );

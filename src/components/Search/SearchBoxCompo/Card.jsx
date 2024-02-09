@@ -2,32 +2,17 @@ import React, { useState } from "react";
 import { BsCopy } from "react-icons/bs";
 import { TbPhoneCall } from "react-icons/tb";
 import { FaCaretUp, FaPlus } from "react-icons/fa6";
-import likeColor from "../../images/fi-sr-thumbs-up.svg";
-import unlike from "../../images/fi-rr-social-network.svg";
-import Vector from "../../images/Vector.png";
-import Vector1 from "../../images/Vector1.png";
+import likeColor from "../../../images/fi-sr-thumbs-up.svg";
+import unlike from "../../../images/fi-rr-social-network.svg";
+import Vector from "../../../images/Vector.png";
+import Vector1 from "../../../images/Vector1.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const responsive = {
   desktop: {
-    breakpoint: { max: 4000, min: 1170 },
-    items: 3,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1170, min: 735 },
-    items: 2,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  Lagremobile: {
-    breakpoint: { max: 735, min: 500 },
-    items: 1.5,
-    slidesToSlide: 1, // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 500, min: 0 },
+    breakpoint: { max: 4000, min: 0 },
     items: 1,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1, 
   },
 };
 const cardDetails = [
@@ -44,23 +29,100 @@ const cardDetails = [
 const Card = () => {
   const [like, setLike] = useState(false);
   const [vector, setVector] = useState(false);
+
+  const carouselRef = React.useRef(null);
+
+  const nextSlide = () => {
+    if (carouselRef.current) {
+      carouselRef.current.next();
+    }
+  };
+
+  const prevSlide = () => {
+    if (carouselRef.current) {
+      carouselRef.current.previous();
+    }
+  };
+  const CustomLeftButton1 = () => {
+    return (
+      <div onClick={prevSlide} className="absolute cursor-pointer xl:left-4 left-4 lg:left-2 top-[46%] flex justify-center z-50  h-6 w-6 bg-[#FFB32A] rounded-full">
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 36 66"
+            fill="none"
+          >
+            <path
+              d="M32.5 62.5L5 31L32.5 3.5"
+              stroke="#FFFFFF"
+              strokeWidth="7"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    );
+  };
+  const CustomRightButton = () => {
+    return (
+      <div onClick={nextSlide} className="absolute  cursor-pointer xl:right-4 right-4 lg:right-2 top-[46%] flex justify-center z-50  h-6 w-6 bg-[#FFB32A] rounded-full">
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 36 66"
+            fill="none"
+          >
+            <path
+              d="M3.5 3.5L31 35L3.5 62.5"
+              stroke="#FFFFFF"
+              strokeWidth="7"
+              strokeLinecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    );
+  };
   return (
     <div
       className="border rounded-lg bg-white"
       style={{ boxShadow: "0px 0px 1px gray" }}
     >
-      <div className="xl:p-4 lg:p-3 p-4 gap-3 flex sm:flex-row flex-col rounded-lg">
-        <div className=" lg:w-[auto] sm:w-[250px] w-full sm:h-auto h-[200px]  flex relative">
-          <div>
+      <div className="xl:p-4 lg:p-3 md:p-4 p-3 lg:gap-3 md:gap-4 sm:gap-2 gap-3.5 flex sm:flex-row flex-col flex-shrink-0 rounded-lg">
+        <div className="lg:w-[35%] sm:w-1/2 w-full relative h-full"> 
+        <CustomRightButton  />
+        <Carousel
+          ref={carouselRef}
+          customTransition="all .5s ease-in-out"
+          itemClass="pt-12 px-20 pb-12 flex justify-center"
+          showDots
+          arrows={false}
+          infinite
+          responsive={responsive}
+          keyBoardControl={true}
+          // removeArrowOnDeviceType={["mobile"]}
+          transitionDuration={500}
+          pauseOnHover
+          shouldResetAutoplay={false}
+          dotListClass="custom-dot-list-style"
+          className="card-slider  w-full h-full relative"
+        >
+        {
+          [1,2,3,4].map((val,ind)=>(
+          <div key={ind} className="relative h-[215px] w-full">
             <img
-              className="h-full w-full object-cover rounded-md"
-              src={require("../../images/Image 1......png")}
+              className=" h-full w-full object-cover rounded-md"
+              src={require("../../../images/Image 1......png")}
               alt=""
             />
-            <div className="absolute xl:left-3 lg:left-2 left-3  top-3 rounded-full p-1 px-2 text-sm text-[#00A451] bg-white">
+            <div className="absolute xl:left-3 lg:left-2 left-3  xl:top-3 lg:top-2 top-3 rounded-full p-1 px-2 text-sm text-[#00A451] bg-white">
               Get 10% OFF
             </div>
-            <div className="top-3 flex gap-2 absolute xl:right-3 lg:right-2 right-3  ">
+            <div className=" flex gap-2 absolute xl:right-3 lg:right-2 right-3  xl:top-3 lg:top-2 top-3">
               <button
                 className=" bg-white h-8 w-8 rounded-full flex flex-shrink-0 items-center justify-center "
                 onClick={() => setVector(!vector)}
@@ -83,9 +145,14 @@ const Card = () => {
               </button>
             </div>
           </div>
-        </div>
 
-        <div className="w-2/3 ">
+          ))
+        }
+
+        </Carousel>
+        <CustomLeftButton1 />
+        </div>
+        <div className="lg:w-[65%] sm:w-1/2 w-full ">
           {cardDetails.map((val, ind) => (
             <div key={ind} className="flex flex-col gap-4">
               <div className="flex justify-between items-center">
@@ -120,7 +187,7 @@ const Card = () => {
                 <span className="h-auto w-8 mt-1">
                   <img
                     className="h-4 w-4"
-                    src={require("../../images/Vectorcard icon.png")}
+                    src={require("../../../images/Vectorcard icon.png")}
                     alt=""
                     srcSet=""
                   />
@@ -151,14 +218,14 @@ const Card = () => {
                   <TbPhoneCall className="h-4 w-4" />
                   <span className="font-medium text-sm">Call</span>
                 </div>
-                <div className="flex  flex-shrink-0 items-center xl:gap-2 lg:gap-1 gap-2 ">
+                <div className="flex flex-shrink-0 items-center xl:gap-2 lg:gap-1 gap-2 ">
                   {val.country.map((va, ind) => (
                     <div
                       key={ind}
                       className="bg-[#FFF6E6] xl:px-3 lg:p-2 p-3  py-2 leading-[14px] rounded-2xl inline-flex items-center xl:gap-2 gap-1"
                     >
                       <img
-                        src={require("../../images/US - United Statesenglish.png")}
+                        src={require("../../../images/US - United Statesenglish.png")}
                         alt=""
                         srcSet=""
                         className="lg:h-3 lg:w-3 xl:h-auto xl:w-auto"

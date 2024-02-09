@@ -50,6 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       },
     },
     border: "1px solid #DDDCDC",
+    borderRadius:"20px"
   },
 }));
 
@@ -57,12 +58,12 @@ const SearchLog = () => {
   return (
     <div className=" mb-4 ">
       <Search>
-        <SearchIconWrapper>
+        <SearchIconWrapper >
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
           placeholder="Search…"
-          inputProps={{ "aria-label": "search" }}
+          inputProps={{ "aria-label": "search",}}
         />
       </Search>
      </div>

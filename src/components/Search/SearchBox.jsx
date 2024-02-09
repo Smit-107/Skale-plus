@@ -1,15 +1,14 @@
 import * as React from "react";
 
 import { Grid } from "@mui/material";
-import SearchLog from "./SearchBoxCompo.jsx/SearchLog";
-import NotSelectCard from "./SearchBoxCompo.jsx/NotSelectCard";
+import SearchLog from "./SearchBoxCompo/SearchLog.jsx";
 import SimpleBar from "simplebar-react/dist";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "simplebar-react/dist/simplebar.min.css";
-import Card from "./Card";
-import AllCard from "./AllCard";
-import PaginationControlled from "./Pagination";
+import AllCard from "./SearchBoxCompo/AllCard.jsx";
+import PaginationControlled from "./SearchBoxCompo/Pagination.jsx";
+import NotSelectCard from "./SearchBoxCompo/NotSelectCard.jsx";
 
 const customTheme = createTheme({
   breakpoints: {

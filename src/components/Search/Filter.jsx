@@ -20,6 +20,7 @@ import { SwitchProps } from "@mui/material/Switch";
 import { useState } from "react";
 import { MoreVert } from "@mui/icons-material";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
+import CustomDropDown from "./CustomDropDown";
 
 const Filter = () => {
   const [state, setState] = useState({
@@ -54,15 +55,221 @@ const Filter = () => {
   ];
   const [menuAnchorEl, setMenuAnchorEl] = useState({});
 
-  // Function to handle opening the menu for a specific tab
-  const handleMenuOpen = (event, ind) => {
-    setMenuAnchorEl((prev) => ({ ...prev, [ind]: event.currentTarget }));
-  };
+  const countryNames = [
+    "Afghanistan",
+    "Albania",
+    "Algeria",
+    "Andorra",
+    "Angola",
+    "Antigua and Barbuda",
+    "Argentina",
+    "Armenia",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",
+    "Bahrain",
+    "Bangladesh",
+    "Barbados",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bhutan",
+    "Bolivia",
+    "Bosnia and Herzegovina",
+    "Botswana",
+    "Brazil",
+    "Brunei",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burundi",
+    "Cabo Verde",
+    "Cambodia",
+    "Cameroon",
+    "Canada",
+    "Central African Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Colombia",
+    "Comoros",
+    "Congo",
+    "Costa Rica",
+    "Croatia",
+    "Cuba",
+    "Cyprus",
+    "Czech Republic",
+    "Denmark",
+    "Djibouti",
+    "Dominica",
+    "Dominican Republic",
+    "Ecuador",
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Eswatini",
+    "Ethiopia",
+    "Fiji",
+    "Finland",
+    "France",
+    "Gabon",
+    "Gambia",
+    "Georgia",
+    "Germany",
+    "Ghana",
+    "Greece",
+    "Grenada",
+    "Guatemala",
+    "Guinea",
+    "Guinea-Bissau",
+    "Guyana",
+    "Haiti",
+    "Honduras",
+    "Hungary",
+    "Iceland",
+    "India",
+    "Indonesia",
+    "Iran",
+    "Iraq",
+    "Ireland",
+    "Israel",
+    "Italy",
+    "Jamaica",
+    "Japan",
+    "Jordan",
+    "Kazakhstan",
+    "Kenya",
+    "Kiribati",
+    "Kosovo",
+    "Kuwait",
+    "Kyrgyzstan",
+    "Laos",
+    "Latvia",
+    "Lebanon",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Madagascar",
+    "Malawi",
+    "Malaysia",
+    "Maldives",
+    "Mali",
+    "Malta",
+    "Marshall Islands",
+    "Mauritania",
+    "Mauritius",
+    "Mexico",
+    "Micronesia",
+    "Moldova",
+    "Monaco",
+    "Mongolia",
+    "Montenegro",
+    "Morocco",
+    "Mozambique",
+    "Myanmar",
+    "Namibia",
+    "Nauru",
+    "Nepal",
+    "Netherlands",
+    "New Zealand",
+    "Nicaragua",
+    "Niger",
+    "Nigeria",
+    "North Korea",
+    "North Macedonia",
+    "Norway",
+    "Oman",
+    "Pakistan",
+    "Palau",
+    "Palestine",
+    "Panama",
+    "Papua New Guinea",
+    "Paraguay",
+    "Peru",
+    "Philippines",
+    "Poland",
+    "Portugal",
+    "Qatar",
+    "Romania",
+    "Russia",
+    "Rwanda",
+    "Saint Kitts and Nevis",
+    "Saint Lucia",
+    "Saint Vincent and the Grenadines",
+    "Samoa",
+    "San Marino",
+    "Sao Tome and Principe",
+    "Saudi Arabia",
+    "Senegal",
+    "Serbia",
+    "Seychelles",
+    "Sierra Leone",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "Solomon Islands",
+    "Somalia",
+    "South Africa",
+    "South Korea",
+    "South Sudan",
+    "Spain",
+    "Sri Lanka",
+    "Sudan",
+    "Suriname",
+    "Sweden",
+    "Switzerland",
+    "Syria",
+    "Taiwan",
+    "Tajikistan",
+    "Tanzania",
+    "Thailand",
+    "Timor-Leste",
+    "Togo",
+    "Tonga",
+    "Trinidad and Tobago",
+    "Tunisia",
+    "Turkey",
+    "Turkmenistan",
+    "Tuvalu",
+    "Uganda",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States",
+    "Uruguay",
+    "Uzbekistan",
+    "Vanuatu",
+    "Vatican City",
+    "Venezuela",
+    "Vietnam",
+    "Yemen",
+    "Zambia",
+    "Zimbabwe",
+  ];
 
-  // Function to handle closing the menu for a specific tab
-  const handleMenuClose = (ind) => {
-    setMenuAnchorEl((prev) => ({ ...prev, [ind]: null }));
-  };
+  const LanguagesOptions = [
+    "English US",
+    "English UK",
+    "English AU",
+    "Korean",
+    "Polish",
+    "German",
+    "French",
+    "Spanish",
+    "Italian",
+    "Chinese",
+    "Japanese",
+    "Portuguese",
+  ];
+  const viewAllFilterOptions = [" Filter1", "Filter2", "Filter3"];
+  const SortByOptions = ["Most Liked", "Most viewed"];
+
   return (
     <div>
       <div className="font-bold sm:text-2xl text-lg mb-3">
@@ -71,12 +278,39 @@ const Filter = () => {
       </div>
 
       <div className="flex flex-wrap justify-between ">
-        <div className="overflow-x-auto scrollbar space-x-2.5 text-nowrap">
-          {tab.map((val, ind) => (
+        <div className="overflow-x-auto flex scrollbar gap-3 text-nowrap 	">
+          <CustomDropDown
+            options={viewAllFilterOptions}
+            // selectedOptions={selectedViewAll}
+            // setSelectedOptions={setSelectedViewAll}
+            title="View All Filters"
+            imagePath={Account}
+            // searchable={true}
+          />
+
+          <CustomDropDown
+            options={SortByOptions}
+            // selectedOptions={selectedViewAll}
+            // setSelectedOptions={setSelectedViewAll}
+            title="Sort By"
+            imagePath={ListAll}
+            // searchable={true}
+          />
+
+          <CustomDropDown
+            options={LanguagesOptions}
+            // selectedOptions={selectedViewAll}
+            // setSelectedOptions={setSelectedViewAll}
+            title="Languages"
+            imagePath={Law}
+            // searchable={true}
+          />
+
+          {/* {tab.map((val, ind) => (
             <div
               key={ind}
               className="py-1.5 px-3 leading-6 items-center bg-[#F3F2F2] inline-flex gap-2 rounded-lg border border-[#3A3A3A]"
-              onClick={(event) => handleMenuOpen(event, ind)}
+             
             >
               <img
                 src={val.icon}
@@ -93,34 +327,11 @@ const Filter = () => {
                   <FaCaretUp />
                 )}
               </div>
-
-              <Menu
-                anchorEl={menuAnchorEl[ind]}
-                open={Boolean(menuAnchorEl[ind])}
-                onClose={() => handleMenuClose(ind)}
-              >
-                {/* Add your menu items here */}
-                <MenuItem>
-                  <ListItemIcon>
-                    {/* Add icon for menu item */}
-                    {/* For example, you can use MoreVert icon */}
-                    <MoreVert />
-                  </ListItemIcon>
-                  <ListItemText primary="Menu Item 1" />
-                </MenuItem>
-                <MenuItem>
-                  <ListItemIcon>
-                    {/* Another menu item */}
-                    <MoreVert />
-                  </ListItemIcon>
-                  <ListItemText primary="Menu Item 2" />
-                </MenuItem>
-              </Menu>
             </div>
-          ))}
+          ))} */}
         </div>
 
-        <FormGroup>
+        <FormGroup className="mt-2">
           <FormControlLabel
             control={
               <Switch

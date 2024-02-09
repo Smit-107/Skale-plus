@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
-const Back = () => {
+const BackPage = () => {
   return (
     <div>
       <div className=" flex flex-col gap-0.5 md:gap-1">
@@ -23,4 +23,4 @@ const Back = () => {
   );
 };
 
-export default Back;
+export default BackPage;
