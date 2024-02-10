@@ -54,6 +54,9 @@ const Filter = () => {
     },
   ];
   const [menuAnchorEl, setMenuAnchorEl] = useState({});
+  const [selectedViewAll, setSelectedViewAll] = useState([]);
+  const [selectedSortBy, setSelectedSortBy] = useState([]);
+  const [selecteLanguages, setselecteLanguages] = useState([]);
 
   const countryNames = [
     "Afghanistan",
@@ -277,58 +280,36 @@ const Filter = () => {
         services
       </div>
 
-      <div className="flex flex-wrap justify-between ">
+      <div className="flex flex-wrap justify-between">
         <div className="overflow-x-auto flex scrollbar gap-3 text-nowrap 	">
           <CustomDropDown
             options={viewAllFilterOptions}
-            // selectedOptions={selectedViewAll}
-            // setSelectedOptions={setSelectedViewAll}
+            selectedOptions={selectedViewAll}
+            setSelectedOptions={setSelectedViewAll}
             title="View All Filters"
             imagePath={Account}
             // searchable={true}
           />
 
           <CustomDropDown
+            // options={viewAllFilterOptions}
             options={SortByOptions}
-            // selectedOptions={selectedViewAll}
-            // setSelectedOptions={setSelectedViewAll}
+            selectedOptions={selectedSortBy}
+            setSelectedOptions={setSelectedSortBy}
             title="Sort By"
             imagePath={ListAll}
             // searchable={true}
           />
 
           <CustomDropDown
-            options={LanguagesOptions}
-            // selectedOptions={selectedViewAll}
-            // setSelectedOptions={setSelectedViewAll}
+            // options={viewAllFilterOptions}
+            options={countryNames }
+            selectedOptions={selecteLanguages}
+            setSelectedOptions={setselecteLanguages}
             title="Languages"
             imagePath={Law}
             // searchable={true}
           />
-
-          {/* {tab.map((val, ind) => (
-            <div
-              key={ind}
-              className="py-1.5 px-3 leading-6 items-center bg-[#F3F2F2] inline-flex gap-2 rounded-lg border border-[#3A3A3A]"
-             
-            >
-              <img
-                src={val.icon}
-                className="h-[16px] font-normal"
-                alt=""
-                srcSet=""
-              />
-              <span className="font-medium ">{val.tabName}</span>
-
-              <div className="flex items-center justify-center">
-                {menuAnchorEl ? (
-                  <FaCaretDown className="text-xs text-gray-800" />
-                ) : (
-                  <FaCaretUp />
-                )}
-              </div>
-            </div>
-          ))} */}
         </div>
 
         <FormGroup className="mt-2">

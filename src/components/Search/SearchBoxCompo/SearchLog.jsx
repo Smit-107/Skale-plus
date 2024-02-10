@@ -47,6 +47,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
       "&:focus": {
         width: "100%",
+        borderColor:"#FFA500"
       },
     },
     border: "1px solid #DDDCDC",
@@ -57,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const SearchLog = () => {
   return (
     <div className=" mb-4 ">
-      <Search>
+      <Search className="!me-2">
         <SearchIconWrapper >
           <SearchIcon />
         </SearchIconWrapper>
