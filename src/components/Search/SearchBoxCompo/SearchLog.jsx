@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
@@ -55,16 +55,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const SearchLog = () => {
+const SearchLog = ({setSearchFilter}) => {
+
+    const handleSearch = (e) => {
+      setSearchFilter(e.target.value);
+    };
+
   return (
     <div className=" mb-4 ">
-      <Search className="!me-2">
+      <Search className="!me-4">
         <SearchIconWrapper >
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
           placeholder="Search…"
+          id="Search Name"
           inputProps={{ "aria-label": "search",}}
+          onChange={handleSearch}
         />
       </Search>
      </div>

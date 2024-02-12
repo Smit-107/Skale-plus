@@ -10,6 +10,7 @@ import Events from "./components/Events/Events";
 import MainPage from "./components/Search/MainPage";
 
 function App() {
+  
   return (
     <div className="App">
       <Header />
@@ -20,7 +21,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} /> 
         <Route path="/events" element={<Events />} />
         <Route path="/search" element={<MainPage />} />
-      </Routes>{" "}
+      </Routes>
       <Footer />
     </div>
   );

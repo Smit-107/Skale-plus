@@ -38,6 +38,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   color: "#000",
+  marginTop:'1.5px'
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -82,13 +83,26 @@ const CustomDropDown = ({
     setOpen(true);
   };
 
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  //   setOpen(false);
+  // };
+
+  // useEffect(() => {
+  //   if (!open) {
+  //     setSearchFilter(""); 
+  //   }
+  // }, [open]);
+
   const handleClose = () => {
+    setTimeout(() => {
+      setSearchFilter(""); // Reset search filter when menu is closed
+    }, 100);
     setAnchorEl(null);
     setOpen(false);
   };
-  if (setAnchorEl === null) {
-    setSearchFilter("");
-  }
+
+
 
   const handleKeyDown = (e) => {
     e.stopPropagation(); // Prevent event from bubbling up
@@ -124,7 +138,7 @@ const CustomDropDown = ({
 
 
   return (
-    <div className="customDropDown">
+    <div className="customDropDown select-none">
       <div
         key={title}
         className="py-1.5 cursor-pointer px-3 leading-6 items-center bg-[#F3F2F2] w-max flex  gap-2 rounded-lg border border-[#3A3A3A]"
@@ -185,6 +199,7 @@ const CustomDropDown = ({
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
               onKeyDown={handleKeyDown}
+              id={'search-${title}'}
               onChange={(e) => {
                 setSearchFilter(e.target.value);
                 console.log(e.target.value);
@@ -193,11 +208,11 @@ const CustomDropDown = ({
           </Search>
         </div>
 
-        <div className="customScroll !pl-0 !py-0">
+        <div className="customScroll !max-h-[calc(350px-124px)] !pl-0 !py-0 ">
               {filteredOptions.map((val, ind) => (
                 <MenuItem
                   key={ind}
-                  className="!text-sm !font-medium !px-3 !py-0.5 "
+                  className="!text-sm !font-medium !px-3 !py-0.5 !mx-1 "
                   onClick={() => {
                     handleCheckboxChange(val);
                   }}

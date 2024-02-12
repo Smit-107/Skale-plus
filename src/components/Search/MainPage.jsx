@@ -9,8 +9,7 @@ const MainPage = () => {
       <div className="flex flex-col gap-4 ">
         <BackPage />
         <SearchTab />
-        <Filter />
-        <SearchBox />
+        
       </div>
     </div>
   );

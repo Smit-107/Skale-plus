@@ -9,6 +9,10 @@ import "simplebar-react/dist/simplebar.min.css";
 import AllCard from "./SearchBoxCompo/AllCard.jsx";
 import PaginationControlled from "./SearchBoxCompo/Pagination.jsx";
 import NotSelectCard from "./SearchBoxCompo/NotSelectCard.jsx";
+import { createContext } from "react";
+
+export const SearchContext = createContext();
+
 
 const customTheme = createTheme({
   breakpoints: {
@@ -24,16 +28,20 @@ const customTheme = createTheme({
   },
 });
 const SearchBox = () => {
+  const [searchFilter, setSearchFilter] = React.useState  ("");
   return (
     <ThemeProvider theme={customTheme}>
       <Grid container>
         <Grid item lg={5.5} md={6} xs={12}>
-          <SearchLog />
+          <SearchLog setSearchFilter={setSearchFilter} />
           <SimpleBar
-            style={{ maxHeight: "600px", height: "100%", width: "100%" }}
+            style={{ maxHeight: "600px", height: "auto", width: "100%" }}
           >
             <div className="sm:pe-2 sm:py-1">
+            <SearchContext.Provider value={searchFilter}>
               <AllCard />
+            </SearchContext.Provider>
+
             </div>
           </SimpleBar>
           <PaginationControlled />

@@ -71,6 +71,9 @@
   .custom ul{
     width: 100% !important;
   }
+  .customCountry ul {
+    width:auto !important ;
+  }
 }
 
 .container1 {
@@ -107,7 +110,18 @@
 
 .custom ul li {
   border-radius: 10px !important;
-  /* margin-right: 8px; */
+}
+
+.customCountry ul {
+  max-height: 450px;
+  height: 100%;
+  width: 350px;
+  padding: 15px 13px;
+}
+
+.customCountry ul li {
+  border-radius: 10px !important;
+  border: 1px #dcdada solid !important;
 }
 
 .scrollbar {
@@ -143,8 +157,11 @@
 
 
 .customScroll{
-  max-height: calc(350px - 124px); 
+  /* max-height: calc(350px - 124px);  */
+  height: 100%;
+  width: 100%;
   overflow-y: auto !important; 
+  overflow-x: hidden !important; 
 }
 
 .customScroll::-webkit-scrollbar {
