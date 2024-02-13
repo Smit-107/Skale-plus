@@ -126,7 +126,7 @@ const Events = () => {
                   </div>
                 </div>
               </TabPanel>
-              
+
               <div className="flex justify-center">
                 <button className="rounded-[18px] lg:rounded-2xl bg-[#FFA500] px-[30px] py-[12px] text-[#fff]  font-medium not-italic leading-normal text-[12px] md:text-[20px]">
                   see more
@@ -135,9 +135,6 @@ const Events = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="sm:pt-0  pt-[20px]">
-        <PartnersSection />
       </div>
     </React.Fragment>
   );

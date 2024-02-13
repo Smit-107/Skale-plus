@@ -11,9 +11,9 @@ const Blogs = () => {
             Blogs
           </span>
           <span className="text-[18px] sm:text-[20px] font-normal p-[5px] md:px-20 text-[#00000088]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore
-            </span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore
+          </span>
         </div>
 
         {/* <div className="flex flex-col-reverse md:grid md:grid-cols-5 gap-[5%]">
@@ -27,8 +27,6 @@ const Blogs = () => {
             </div>
           </div>
         </div> */}
-
-        
       </div>
     </div>
   );

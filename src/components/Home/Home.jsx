@@ -7,9 +7,6 @@ import EventSection from "../LandingPage/EventSection";
 import TrendingSection from "../LandingPage/TrendingSection";
 import PartnersSection from "../LandingPage/PartnersSection";
 
-
-
-
 export default function Home(props) {
   const customTheme = createTheme({
     breakpoints: {
@@ -25,20 +22,13 @@ export default function Home(props) {
     },
   });
 
-
-
-
-
-
   return (
     <ThemeProvider theme={customTheme}>
-      <HeaderSection/>
+      <HeaderSection />
       <Services />
       <StartUpResourceSection />
       <TrendingSection />
       <EventSection />
-      <PartnersSection />
-      
     </ThemeProvider>
   );
 }

@@ -117,9 +117,6 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-      <div className="sm:pt-0  pt-[20px]">
-        <PartnersSection />
-      </div>
     </React.Fragment>
   );
 };
